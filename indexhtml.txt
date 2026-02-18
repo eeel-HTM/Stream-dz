@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stream DZ | Premium Streaming</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#0f0f14;
+--card:#171923;
+--blue:#1e90ff;
+--netflix:#e50914;
+--spotify:#1db954;
+--white:#ffffff;
+--gray:#9aa0a6;
+}
+body{background:var(--bg);color:var(--white);font-family:'Cairo',sans-serif;margin:0;scroll-behavior:smooth;}
+body::before{content:"";position:fixed;inset:0;border:3px solid var(--blue);pointer-events:none;box-shadow:0 0 30px var(--blue);z-index:9999;}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:#11131a;position:sticky;top:0;z-index:1000;}
+.logo{font-size:22px;font-weight:bold;letter-spacing:2px;}
+.logo span{color:var(--blue);}
+.nav-links a{color:var(--white);text-decoration:none;margin-left:25px;transition:.3s;}
+.nav-links a:hover{color:var(--blue);}
+.hero{text-align:center;padding:120px 20px;background:linear-gradient(145deg,#0f0f14,#141824);}
+.hero h1{font-size:48px;margin-bottom:20px;}
+.hero p{color:var(--gray);font-size:18px;margin-bottom:40px;}
+.cta-btn{background:var(--blue);color:#fff;padding:15px 35px;border:none;border-radius:30px;font-size:16px;cursor:pointer;transition:.3s;box-shadow:0 0 20px var(--blue);}
+.cta-btn:hover{transform:scale(1.05);box-shadow:0 0 35px var(--blue);}
+.countdown{margin-top:40px;font-size:20px;color:var(--netflix);font-weight:bold;}
+.popup{position:fixed;bottom:30px;right:30px;background:var(--card);padding:25px;border-radius:15px;box-shadow:0 0 25px var(--blue);display:none;max-width:300px;animation:fadeIn .5s ease-in-out;}
+.popup h3{margin:0 0 10px 0;color:var(--netflix);}
+.popup button{margin-top:15px;padding:10px 20px;border:none;background:var(--blue);color:#fff;border-radius:20px;cursor:pointer;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:40px;}
+.card{background:var(--card);padding:25px;border-radius:15px;text-align:center;transition:.4s;box-shadow:0 0 15px rgba(0,123,255,0.3);opacity:0;transform:translateY(20px);}
+.card:hover{transform:translateY(-10px);box-shadow:0 0 50px var(--blue);}
+.badge{background:var(--netflix);color:#fff;padding:5px 10px;border-radius:15px;display:inline-block;margin-bottom:10px;font-weight:bold;}
+.price{font-size:22px;font-weight:bold;margin:15px 0;}
+.stars{color:gold;margin-bottom:10px;}
+.section-title{text-align:center;font-size:28px;margin-bottom:30px;}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+<div class="logo">STREAM <span>DZ</span></div>
+<div class="nav-links">
+<a href="#offers">العروض</a>
+<a href="#why">لماذا نحن</a>
+<a href="#guarantee">الضمان</a>
+<a href="https://www.instagram.com/streamdz_premium?igsh=Ynh3OXZ0bG9uMnV3" target="_blank">Instagram</a>
+</div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+<h1>أفضل اشتراكات رقمية في الجزائر</h1>
+<p>Netflix • Spotify • عروض مدمجة • أسعار رسمية • دعم سريع</p>
+<button class="cta-btn" onclick="document.getElementById('offers').scrollIntoView()">شاهد العروض</button>
+<div class="countdown">
+عرض Netflix شاشة واحدة 1200 دج ينتهي خلال: <span id="timer"></span>
+</div>
+</section>
+
+<!-- Popup -->
+<div class="popup" id="offerPopup">
+<h3>🔥 عرض محدود</h3>
+<p>Netflix شاشة واحدة بـ 1200 دج فقط</p>
+<button onclick="document.getElementById('offers').scrollIntoView(); closePopup();">اطلب الآن</button>
+</div>
+
+<!-- PART 2: العروض -->
+<section id="offers">
+<h2 class="section-title">🔥 عروضنا الرقمية</h2>
+<div class="cards">
+<!-- هنا نضيف كل الباقات: شاشة واحدة، 5 شاشات، Spotify، عروض مدمجة كما بعثتلك قبل -->
+<!-- مثال بطاقة واحدة -->
+<div class="card" style="border:2px solid var(--netflix);">
+<div class="badge">الأكثر طلباً</div>
+<div class="stars">★★★★★ (5.0)</div>
+<h3>Netflix شاشة واحدة</h3>
+<div class="price">1200 دج / شهر</div>
+<p style="opacity:0.7;">حساب رسمي - تفعيل فوري</p>
+<button class="cta-btn" onclick="buy('Netflix شاشة واحدة')">اطلب الآن</button>
+</div>
+<!-- بقية الباقات تضيفهم بنفس الطريقة -->
+</div>
+</section>
+
+<!-- PART 3: لماذا نحن + ضمان + Feedbacks -->
+<section id="why">
+<h2 class="section-title">لماذا تختار Stream DZ؟</h2>
+<div class="cards">
+<div class="card"><h3>حسابات قانونية 100%</h3><p style="opacity:0.8;">جميع الحسابات رسمية ومفعّلة فورياً. لا مخاطر.</p></div>
+<div class="card"><h3>دعم سريع</h3><p style="opacity:0.8;">فريقنا متواجد للرد على جميع استفساراتك خلال دقائق.</p></div>
+<div class="card"><h3>أفضل الأسعار</h3><p style="opacity:0.8;">الأسعار رسمية ومعقولة لجميع الباقات.</p></div>
+<div class="card"><h3>تجربة مستخدم سلسة</h3><p style="opacity:0.8;">واجهة سهلة وبسيطة مع Popup و Countdown لإقناع العملاء.</p></div>
+</div>
+</section>
+
+<section id="guarantee">
+<h2 class="section-title">ضمان واسترجاع</h2>
+<div class="cards">
+<div class="card"><h3>ضمان محمود</h3><p style="opacity:0.8;">استرجاع أو تعديل الخدمة خلال 24 ساعة إذا حصل أي خطأ.</p></div>
+<div class="card"><h3>تأكيد رسمي</h3><p style="opacity:0.8;">جميع الحسابات مفعّلة وموثوقة بالكامل.</p></div>
+</div>
+</section>
+
+<section id="feedbacks">
+<h2 class="section-title">آراء العملاء</h2>
+<div class="cards">
+<div class="card"><h3>أحمد من الجزائر العاصمة</h3><p style="opacity:0.8;">"اشتريت Netflix شاشة واحدة، كل شيء شغال وفوري!"</p></div>
+<div class="card"><h3>ليلى من وهران</h3><p style="opacity:0.8;">"الضمان محمود وفريق الدعم سريع جداً، أنصح Stream DZ!"</p></div>
+<div class="card"><h3>يوسف من قسنطينة</h3><p style="opacity:0.8;">"أفضل أسعار، وعروض ممتازة لكل الباقات."</p></div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer style="background:#11131a;padding:50px 20px;text-align:center;">
+<h2 style="margin-bottom:20px;">تابعنا</h2>
+<a href="https://www.instagram.com/streamdz_premium?igsh=Ynh3OXZ0bG9uMnV3" target="_blank" style="color:#fff;margin:0 15px;font-size:24px;text-decoration:none;">Instagram</a>
+<a href="https://wa.me/213558472823" target="_blank" style="color:#25D366;margin:0 15px;font-size:24px;text-decoration:none;">WhatsApp</a>
+<p style="margin-top:30px;color:var(--gray);font-size:14px;">© 2026 Stream DZ | جميع الحقوق محفوظة</p>
+</footer>
+
+<script>
+// Countdown Timer
+var countDownDate = new Date().getTime() + (60*60*1000);
+var x = setInterval(function(){
+var now = new Date().getTime();
+var distance = countDownDate - now;
+var minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+var seconds = Math.floor((distance%(1000*60))/1000);
+document.getElementById("timer").innerHTML = minutes + "د " + seconds + "ث";
+if(distance<0){clearInterval(x);document.getElementById("timer").innerHTML="انتهى العرض";}
+},1000);
+
+// Popup after 5s
+setTimeout(function(){document.getElementById("offerPopup").style.display="block";},5000);
+
+function closePopup(){document.getElementById("offerPopup").style.display="none";}
+
+// Buy button وهمي
+function buy(product){
+alert("لقد اخترت: "+product+"\nستتم إعادة التوجيه للطلب قريباً!");
+}
+
+// Scroll animations
+const faders = document.querySelectorAll(".card");
+window.addEventListener("scroll",()=>{
+faders.forEach(el=>{
+const rect = el.getBoundingClientRect();
+if(rect.top < window.innerHeight - 100){
+el.style.opacity="1";
+el.style.transform="translateY(0)";
+}
+});
+});
+</script>
+</body>
+</html>
